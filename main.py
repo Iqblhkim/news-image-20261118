@@ -1,11 +1,14 @@
 """Entry for news-image-20261118: place the bundled picture at the output.
 
-The bundled picture (entry.png, 1024 by 1024, 1,017,448 bytes) is a
-front-page collage of Wednesday 18 November 2026: the tanker war in the
-Gulf, the Kerch Bridge hit for a second night, the COP31 climate talks
-in Antalya, and the Quad meeting in Manila. This program only copies
-those exact bytes to the output path. It uses no network and no
-randomness, so every run produces the same file.
+The bundled picture (entry.png, 1024 by 1024, 145,226 bytes) is a dense
+front page of Wednesday 18 November 2026: 33 stories — the US-Iran
+exchange over Bahrain, the Crimea bridge span down, the Quad meeting in
+Manila, six more stories with icons, a dotted world map with numbered
+pins, and a list of 24 more stories from the day. It is drawn
+programmatically (see ../news-image-20261117/draw_v2.py), so every
+headline is typeset and legible. This program only copies those exact
+bytes to the output path. It uses no network and no randomness, so every
+run produces the same file.
 """
 
 from pathlib import Path

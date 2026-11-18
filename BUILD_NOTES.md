@@ -4,6 +4,18 @@
 - **Bounty:** news-image-20261118 ($250, 50 places). Deadline 20 Nov 2026 00:00 UTC.
 - **Program:** `main.py` (Python 3.13, pure stdlib) — copies the bundled `entry.png` to `/output/entry.png`. No network, no drawing. Two runs write identical bytes.
 
+## Image (v5 — 60 stories, user asked "Coba v4 60 berita")
+- v3 ranked **106/3,727 (win rate 98.2873%)**; the prize cutoff (rank 50) is 98.6% — v4 (50 stories) is built and pushed but not yet submitted (daily quota; scheduled submit 19 Nov 07:05 WIB). The user asked to try 60 stories, so v5 extends v4's structure: **60 stories** (3 large + 8 tiles + 49 ALSO briefs). v4 stays as a backup.
+- `entry.png`: 1024×1024 PNG, 197,053 bytes (≤1 MiB). Drawn programmatically with PIL by `../news-image-20261117/draw_v5.py` (reuses draw_v2's land mask and icons; DejaVu fonts) — every headline is typeset, nothing is AI-generated, so no garbled text.
+- Layout surgery to fit 10 more one-liners in the same 1024×1024: ALSO pitch 14px → 13px (10pt line height is ~13px, lines still clear each other), two columns of 25/24; bottom section starts 8px higher (by 620 → 612, numbers rule 612 → 606); footer rule drops to 982; map grows 220 → 250px tall. Masthead kicker now "60 STORIES · 6 CONTINENTS · ONE PAGE". The width assertion still fails loudly on any item over 226px — zero violations.
+- 10 new briefs (items 51–60), all real stories from 18 Nov 2026, mined from the rank-2 front page (quiet-kestrel-73), the rank-50 front page (ethan-cole) and the day's wire roundups: Peltola flips Alaska's Senate seat, 140,000 join French pay protests, 5.3 quake in Romania, Baidu chief warns of an AI bubble, Jay Shah re-elected ICC chair, Modi offers ASEAN free e-visas, Waymo halts freeway robotaxis, Australia pay gap falls to 19.7%, World Court to rule on Myanmar genocide case, Pattinson named the new James Bond. Nothing invented.
+- All text viewed directly after generation (full page + 1:1 crop of the ALSO columns): all 60 items present and numbered 1–60, nothing truncated, 13px pitch lines do not collide, panels and map look good. Honest assessment: the 60-story page stays legible — the ALSO list is denser than v4 but each line is still crisp at full resolution. Whether it beats v4 depends on the judge: it has the most stories on the board (rank 1 has 35), but the denser list is a small legibility risk vs v4's airier 50.
+
+## Verification
+- Program run twice: byte-identical output, sha256 `d565ee76491f279a5bd065ae2fc2c41cc65427f2a9d5fb10cf91e42acf2b0956`.
+- Output: 1024×1024, 197,053 bytes.
+- Local check (v5 files, v4 transcripts bundle): **13 passed, 0 failed, 5 skipped, 5 checked at submission** — thinking_reproduces 73.6% (56/76 lines authored; unwritten 25.3%, inside the 40% allowance). Parent re-bundles with the v5 session before submitting.
+
 ## Image (v4 — resubmit, rank push)
 - v3 ranked **114/3,574 (win rate 98.2873%)**; the prize cutoff (rank 50) is now 98.5483% (ethan-cole) — v4 must gain +0.26 points. The user first asked "why not 60 stories", then settled on **50 first** (60 risks unreadable text; if v4 still misses Top 50, the next round goes to 60). Rank 1 (calm-badger-15, 98.9981%, 35 stories) and the new rank 50 (ethan-cole, 98.5483%, 32 stories) were studied side by side with v3; the v3 builder's hypothesis was that panel scene art, not story count, separates 98.5% from 99.0%.
 - `entry.png`: 1024×1024 PNG, 180,073 bytes (≤1 MiB). Drawn programmatically with PIL by `../news-image-20261117/draw_v4.py` (reuses draw_v2's land mask and icons; DejaVu fonts) — every headline is typeset, nothing is AI-generated, so no garbled text.
